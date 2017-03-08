@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+  
+	<dubbo:application organization="transfer" name="transfer" owner="jackson" />
+
+	<!-- 使用zookeeper注册中心暴露服务地址 -->
+	<dubbo:registry address="${transfer.zookeeper.url}" 
+		file="${user.home}/dubbo-service-file/transfer/dubbo.cache" />
+
+	<dubbo:protocol name="dubbo" port="20880" threadpool="fixed" threads="10" />
+
+	<!-- 声明需要暴露服务的接口 -->
+	<dubbo:service interface="com.ds.transfer.record.service.TransferRecordService" ref="transferRecordService" 
+		group="support" version="${transfer.version}" timeout="${transfer.timeout}" retries="${transfer.retries}" 
+		owner="${transfer.owner}" executes="${transfer.provider.executes}" />
+
+	<bean id="transferRecordService" class="com.ds.transfer.record.service.TransferRecordServiceImpl" />
+
+</beans>

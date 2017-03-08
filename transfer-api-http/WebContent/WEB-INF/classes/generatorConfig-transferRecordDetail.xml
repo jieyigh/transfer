@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry location="C:\lib\mysql-connector-java-5.1.30.jar"/>
+	<context id="context1">
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://203.88.168.177:3306/transfer?useUnicode=true&amp;characterEncoding=UTF-8"
+			userId="root" password="rgTlNZ5QCuV231soJB3" />
+
+		<javaModelGenerator targetPackage="com.ds.transfer.http.entity"
+			targetProject="transfer-api-http">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.ds.transfer.http.mapper"
+			targetProject="transfer-api-http">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator targetPackage="com.ds.transfer.http.mapper"
+			targetProject="transfer-api-http" type="XMLMAPPER" />
+
+		<table domainObjectName="PlatformUrl" tableName="platform_url">
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+			<columnOverride column="id" javaType="java.lang.Long"></columnOverride>
+		</table>
+	</context>
+</generatorConfiguration>

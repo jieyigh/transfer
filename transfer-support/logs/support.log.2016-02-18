@@ -1,0 +1,816 @@
+2016-02-18 13:24:27.655 116  INFO  support.FileSystemXmlApplicationContext - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@183a41c: startup date [Thu Feb 18 13:24:27 CST 2016]; root of context hierarchy
+2016-02-18 13:24:27.684 145  INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from file [G:\workspace\20150910_first\transfer-support\resource\applicationContext.xml]
+2016-02-18 13:24:27.759 220  INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-disconf.xml]
+2016-02-18 13:24:27.789 250  INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-provider.xml]
+2016-02-18 13:24:28.922 1383 ERROR common.Version -  [DUBBO] Duplicate class com/alibaba/dubbo/common/Version.class in 2 jar [file:/G:/workspace/20150910_first/transfer-common/lib/dubbo-2.5.4-SNAPSHOT.jar!/com/alibaba/dubbo/common/Version.class, file:/G:/workspace/20150910_first/transfer-support/lib/dubbo-2.5.4-SNAPSHOT.jar!/com/alibaba/dubbo/common/Version.class], dubbo version: 2.5.4-SNAPSHOT, current host: 127.0.0.1
+2016-02-18 13:24:28.923 1384 ERROR common.Version -  [DUBBO] Duplicate class com/alibaba/dubbo/config/spring/schema/DubboNamespaceHandler.class in 2 jar [file:/G:/workspace/20150910_first/transfer-common/lib/dubbo-2.5.4-SNAPSHOT.jar!/com/alibaba/dubbo/config/spring/schema/DubboNamespaceHandler.class, file:/G:/workspace/20150910_first/transfer-support/lib/dubbo-2.5.4-SNAPSHOT.jar!/com/alibaba/dubbo/config/spring/schema/DubboNamespaceHandler.class], dubbo version: 2.5.4-SNAPSHOT, current host: 127.0.0.1
+2016-02-18 13:24:29.097 1558 INFO  config.ConfigMgr - --------------- LOAD CONFIG START ---------------
+2016-02-18 13:24:29.168 1629 INFO  config.ConfigMgr - Finer print: jackson-PC_0_e9f80dfa-0b0f-446a-9292-0dca436894e9
+2016-02-18 13:24:29.172 1633 INFO  utils.ClassLoaderUtil - classpath: /G:/workspace/20150910_first/transfer-support/bin/
+2016-02-18 13:24:29.177 1638 INFO  inner.DisInnerConfigHelper - SERVER disconf.conf_server_host: [119.9.109.54:8099]
+2016-02-18 13:24:29.177 1638 INFO  inner.DisInnerConfigHelper - SERVER disconf.version: 1.0.0
+2016-02-18 13:24:29.177 1638 INFO  inner.DisInnerConfigHelper - SERVER disconf.app: transfer-api-config
+2016-02-18 13:24:29.177 1638 INFO  inner.DisInnerConfigHelper - SERVER disconf.env: local
+2016-02-18 13:24:29.177 1638 INFO  inner.DisInnerConfigHelper - SERVER disconf.enable.remote.conf: true
+2016-02-18 13:24:29.177 1638 INFO  inner.DisInnerConfigHelper - SERVER disconf.debug: true
+2016-02-18 13:24:29.177 1638 INFO  inner.DisInnerConfigHelper - SERVER disconf.user_define_download_dir: resource/
+2016-02-18 13:24:29.177 1638 INFO  inner.DisInnerConfigHelper - SERVER ignore: []
+2016-02-18 13:24:29.177 1638 INFO  config.ConfigMgr - --------------- LOAD CONFIG END ---------------
+2016-02-18 13:24:29.177 1638 INFO  client.DisconfMgr - ******************************* DISCONF START FIRST SCAN *******************************
+2016-02-18 13:24:29.329 1790 INFO  reflections.Reflections - Reflections took 111 ms to scan 2 urls, producing 99 keys and 13364 values 
+2016-02-18 13:24:34.530 6991 WARN  impl.RetryStrategyRoundBin - cannot reach, will retry 0 .... org.apache.http.conn.ConnectTimeoutException: Connect to 119.9.109.54:8099 [/119.9.109.54] failed: connect timed out
+2016-02-18 13:24:35.531 7992 WARN  impl.RetryStrategyRoundBin - finally failed....
+2016-02-18 13:24:36.533 8994 ERROR watch.WatchFactory - cannot get watch module
+java.lang.Exception: cannot get: RemoteUrl [url=/api/zoo/hosts, serverList=[119.9.109.54:8099], urls=[http://119.9.109.54:8099/api/zoo/hosts]]
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.getJsonData(RestfulMgrImpl.java:75)
+	at com.baidu.disconf.client.fetcher.impl.FetcherMgrImpl.getValueFromServer(FetcherMgrImpl.java:76)
+	at com.baidu.disconf.client.watch.WatchFactory.getWatchMgr(WatchFactory.java:43)
+	at com.baidu.disconf.client.core.DisconfCoreFactory.getDisconfCoreMgr(DisconfCoreFactory.java:32)
+	at com.baidu.disconf.client.DisconfMgr.firstScan(DisconfMgr.java:96)
+	at com.baidu.disconf.client.DisconfMgrBean.postProcessBeanDefinitionRegistry(DisconfMgrBean.java:75)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:254)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:94)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+2016-02-18 13:24:36.556 9017 INFO  client.DisconfMgr - ******************************* DISCONF END FIRST SCAN *******************************
+2016-02-18 13:24:36.658 9119 WARN  beans.GenericTypeAwarePropertyDescriptor - Invalid JavaBean property 'locations' being accessed! Ambiguous write methods found next to actually used [public void com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.setLocations(java.util.List)]: [public void org.springframework.core.io.support.PropertiesLoaderSupport.setLocations(org.springframework.core.io.Resource[])]
+2016-02-18 13:24:55.189 116  INFO  support.FileSystemXmlApplicationContext - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@183a41c: startup date [Thu Feb 18 13:24:55 CST 2016]; root of context hierarchy
+2016-02-18 13:24:55.218 145  INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from file [G:\workspace\20150910_first\transfer-support\resource\applicationContext.xml]
+2016-02-18 13:24:55.294 221  INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-disconf.xml]
+2016-02-18 13:24:55.325 252  INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-provider.xml]
+2016-02-18 13:24:57.497 2424 ERROR common.Version -  [DUBBO] Duplicate class com/alibaba/dubbo/common/Version.class in 2 jar [file:/G:/workspace/20150910_first/transfer-common/lib/dubbo-2.5.4-SNAPSHOT.jar!/com/alibaba/dubbo/common/Version.class, file:/G:/workspace/20150910_first/transfer-support/lib/dubbo-2.5.4-SNAPSHOT.jar!/com/alibaba/dubbo/common/Version.class], dubbo version: 2.5.4-SNAPSHOT, current host: 127.0.0.1
+2016-02-18 13:24:57.498 2425 ERROR common.Version -  [DUBBO] Duplicate class com/alibaba/dubbo/config/spring/schema/DubboNamespaceHandler.class in 2 jar [file:/G:/workspace/20150910_first/transfer-common/lib/dubbo-2.5.4-SNAPSHOT.jar!/com/alibaba/dubbo/config/spring/schema/DubboNamespaceHandler.class, file:/G:/workspace/20150910_first/transfer-support/lib/dubbo-2.5.4-SNAPSHOT.jar!/com/alibaba/dubbo/config/spring/schema/DubboNamespaceHandler.class], dubbo version: 2.5.4-SNAPSHOT, current host: 127.0.0.1
+2016-02-18 13:24:57.658 2585 INFO  config.ConfigMgr - --------------- LOAD CONFIG START ---------------
+2016-02-18 13:24:57.724 2651 INFO  config.ConfigMgr - Finer print: jackson-PC_0_7a5bacdc-e4d0-4fde-ac20-6e057f47431f
+2016-02-18 13:24:57.729 2656 INFO  utils.ClassLoaderUtil - classpath: /G:/workspace/20150910_first/transfer-support/bin/
+2016-02-18 13:24:57.734 2661 INFO  inner.DisInnerConfigHelper - SERVER disconf.conf_server_host: [119.9.109.54:8099]
+2016-02-18 13:24:57.735 2662 INFO  inner.DisInnerConfigHelper - SERVER disconf.version: 1.0.0
+2016-02-18 13:24:57.735 2662 INFO  inner.DisInnerConfigHelper - SERVER disconf.app: transfer-api-config
+2016-02-18 13:24:57.735 2662 INFO  inner.DisInnerConfigHelper - SERVER disconf.env: local
+2016-02-18 13:24:57.735 2662 INFO  inner.DisInnerConfigHelper - SERVER disconf.enable.remote.conf: true
+2016-02-18 13:24:57.735 2662 INFO  inner.DisInnerConfigHelper - SERVER disconf.debug: true
+2016-02-18 13:24:57.735 2662 INFO  inner.DisInnerConfigHelper - SERVER disconf.user_define_download_dir: resource/
+2016-02-18 13:24:57.735 2662 INFO  inner.DisInnerConfigHelper - SERVER ignore: []
+2016-02-18 13:24:57.735 2662 INFO  config.ConfigMgr - --------------- LOAD CONFIG END ---------------
+2016-02-18 13:24:57.735 2662 INFO  client.DisconfMgr - ******************************* DISCONF START FIRST SCAN *******************************
+2016-02-18 13:24:57.888 2815 INFO  reflections.Reflections - Reflections took 111 ms to scan 2 urls, producing 99 keys and 13364 values 
+2016-02-18 13:24:58.219 3146 INFO  http.HttpClientUtil - execute http request [null], status code [502]
+2016-02-18 13:24:58.219 3146 WARN  impl.RetryStrategyRoundBin - cannot reach, will retry 0 .... java.lang.Exception: execute  request failed [null], statusCode [502]
+2016-02-18 13:24:59.219 4146 WARN  impl.RetryStrategyRoundBin - finally failed....
+2016-02-18 13:25:00.221 5148 ERROR watch.WatchFactory - cannot get watch module
+java.lang.Exception: cannot get: RemoteUrl [url=/api/zoo/hosts, serverList=[119.9.109.54:8099], urls=[http://119.9.109.54:8099/api/zoo/hosts]]
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.getJsonData(RestfulMgrImpl.java:75)
+	at com.baidu.disconf.client.fetcher.impl.FetcherMgrImpl.getValueFromServer(FetcherMgrImpl.java:76)
+	at com.baidu.disconf.client.watch.WatchFactory.getWatchMgr(WatchFactory.java:43)
+	at com.baidu.disconf.client.core.DisconfCoreFactory.getDisconfCoreMgr(DisconfCoreFactory.java:32)
+	at com.baidu.disconf.client.DisconfMgr.firstScan(DisconfMgr.java:96)
+	at com.baidu.disconf.client.DisconfMgrBean.postProcessBeanDefinitionRegistry(DisconfMgrBean.java:75)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:254)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:94)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+2016-02-18 13:25:00.245 5172 INFO  client.DisconfMgr - ******************************* DISCONF END FIRST SCAN *******************************
+2016-02-18 13:25:00.353 5280 WARN  beans.GenericTypeAwarePropertyDescriptor - Invalid JavaBean property 'locations' being accessed! Ambiguous write methods found next to actually used [public void com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.setLocations(java.util.List)]: [public void org.springframework.core.io.support.PropertiesLoaderSupport.setLocations(org.springframework.core.io.Resource[])]
+2016-02-18 13:25:00.466 5393 WARN  impl.RetryStrategyRoundBin - cannot reach, will retry 0 .... java.io.IOException: Server returned HTTP response code: 502 for URL: http://119.9.109.54:8099/api/config/file?app=transfer-api-config&env=local&type=0&key=resource/jdbc.properties&version=1.0.0
+2016-02-18 13:25:01.466 6393 WARN  impl.RetryStrategyRoundBin - finally failed....
+2016-02-18 13:25:02.466 7393 WARN  impl.RestfulMgrImpl - download file failed, using previous download file.
+java.lang.Exception: download failed.
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.retry4ConfDownload(RestfulMgrImpl.java:246)
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.retryDownload(RestfulMgrImpl.java:180)
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.downloadFromServer(RestfulMgrImpl.java:106)
+	at com.baidu.disconf.client.fetcher.impl.FetcherMgrImpl.downloadFileFromServer(FetcherMgrImpl.java:100)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.updateOneConfFile(DisconfFileCoreProcessorImpl.java:105)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.processOneItem(DisconfFileCoreProcessorImpl.java:76)
+	at com.baidu.disconf.client.core.impl.DisconfCoreMgrImpl.processFile(DisconfCoreMgrImpl.java:82)
+	at com.baidu.disconf.client.DisconfMgr.reloadableScan(DisconfMgr.java:191)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.setLocations(ReloadablePropertiesFactoryBean.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1157)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:922)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:82)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:62)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:150)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+2016-02-18 13:25:02.468 7395 ERROR impl.DisconfFileCoreProcessorImpl - java.lang.NullPointerException
+java.lang.NullPointerException
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.downloadFromServer(RestfulMgrImpl.java:133)
+	at com.baidu.disconf.client.fetcher.impl.FetcherMgrImpl.downloadFileFromServer(FetcherMgrImpl.java:100)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.updateOneConfFile(DisconfFileCoreProcessorImpl.java:105)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.processOneItem(DisconfFileCoreProcessorImpl.java:76)
+	at com.baidu.disconf.client.core.impl.DisconfCoreMgrImpl.processFile(DisconfCoreMgrImpl.java:82)
+	at com.baidu.disconf.client.DisconfMgr.reloadableScan(DisconfMgr.java:191)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.setLocations(ReloadablePropertiesFactoryBean.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1157)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:922)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:82)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:62)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:150)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+2016-02-18 13:25:02.470 7397 WARN  impl.DisconfFileCoreProcessorImpl - using local properties in class path: resource/jdbc.properties
+2016-02-18 13:25:02.494 7421 ERROR impl.DisconfFileCoreProcessorImpl - cannot get kv data for resource/jdbc.properties
+java.lang.Exception: cannot load config file: /G:/workspace/20150910_first/transfer-support/bin/\resource/jdbc.properties
+	at com.baidu.disconf.client.utils.ConfigLoaderUtils.loadConfig(ConfigLoaderUtils.java:105)
+	at com.baidu.disconf.client.core.filetype.impl.DisconfPropertiesProcessorImpl.getKvMap(DisconfPropertiesProcessorImpl.java:23)
+	at com.baidu.disconf.client.core.filetype.FileTypeProcessorUtils.getKvMap(FileTypeProcessorUtils.java:47)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.updateOneConfFile(DisconfFileCoreProcessorImpl.java:123)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.processOneItem(DisconfFileCoreProcessorImpl.java:76)
+	at com.baidu.disconf.client.core.impl.DisconfCoreMgrImpl.processFile(DisconfCoreMgrImpl.java:82)
+	at com.baidu.disconf.client.DisconfMgr.reloadableScan(DisconfMgr.java:191)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.setLocations(ReloadablePropertiesFactoryBean.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1157)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:922)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:82)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:62)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:150)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+2016-02-18 13:25:02.501 7428 WARN  impl.DisconfFileCoreProcessorImpl - cannot monitor resource/jdbc.properties because watch mgr is null
+2016-02-18 13:25:02.603 7530 WARN  impl.RetryStrategyRoundBin - cannot reach, will retry 0 .... java.io.IOException: Server returned HTTP response code: 502 for URL: http://119.9.109.54:8099/api/config/file?app=transfer-api-config&env=local&type=0&key=resource/support.properties&version=1.0.0
+2016-02-18 13:25:03.604 8531 WARN  impl.RetryStrategyRoundBin - finally failed....
+2016-02-18 13:25:04.604 9531 WARN  impl.RestfulMgrImpl - download file failed, using previous download file.
+java.lang.Exception: download failed.
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.retry4ConfDownload(RestfulMgrImpl.java:246)
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.retryDownload(RestfulMgrImpl.java:180)
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.downloadFromServer(RestfulMgrImpl.java:106)
+	at com.baidu.disconf.client.fetcher.impl.FetcherMgrImpl.downloadFileFromServer(FetcherMgrImpl.java:100)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.updateOneConfFile(DisconfFileCoreProcessorImpl.java:105)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.processOneItem(DisconfFileCoreProcessorImpl.java:76)
+	at com.baidu.disconf.client.core.impl.DisconfCoreMgrImpl.processFile(DisconfCoreMgrImpl.java:82)
+	at com.baidu.disconf.client.DisconfMgr.reloadableScan(DisconfMgr.java:191)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.setLocations(ReloadablePropertiesFactoryBean.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1157)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:922)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:82)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:62)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:150)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+2016-02-18 13:25:04.606 9533 ERROR impl.DisconfFileCoreProcessorImpl - java.lang.NullPointerException
+java.lang.NullPointerException
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.downloadFromServer(RestfulMgrImpl.java:133)
+	at com.baidu.disconf.client.fetcher.impl.FetcherMgrImpl.downloadFileFromServer(FetcherMgrImpl.java:100)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.updateOneConfFile(DisconfFileCoreProcessorImpl.java:105)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.processOneItem(DisconfFileCoreProcessorImpl.java:76)
+	at com.baidu.disconf.client.core.impl.DisconfCoreMgrImpl.processFile(DisconfCoreMgrImpl.java:82)
+	at com.baidu.disconf.client.DisconfMgr.reloadableScan(DisconfMgr.java:191)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.setLocations(ReloadablePropertiesFactoryBean.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1157)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:922)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:82)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:62)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:150)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+2016-02-18 13:25:04.609 9536 WARN  impl.DisconfFileCoreProcessorImpl - using local properties in class path: resource/support.properties
+2016-02-18 13:25:04.611 9538 ERROR impl.DisconfFileCoreProcessorImpl - cannot get kv data for resource/support.properties
+java.lang.Exception: cannot load config file: /G:/workspace/20150910_first/transfer-support/bin/\resource/support.properties
+	at com.baidu.disconf.client.utils.ConfigLoaderUtils.loadConfig(ConfigLoaderUtils.java:105)
+	at com.baidu.disconf.client.core.filetype.impl.DisconfPropertiesProcessorImpl.getKvMap(DisconfPropertiesProcessorImpl.java:23)
+	at com.baidu.disconf.client.core.filetype.FileTypeProcessorUtils.getKvMap(FileTypeProcessorUtils.java:47)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.updateOneConfFile(DisconfFileCoreProcessorImpl.java:123)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.processOneItem(DisconfFileCoreProcessorImpl.java:76)
+	at com.baidu.disconf.client.core.impl.DisconfCoreMgrImpl.processFile(DisconfCoreMgrImpl.java:82)
+	at com.baidu.disconf.client.DisconfMgr.reloadableScan(DisconfMgr.java:191)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.setLocations(ReloadablePropertiesFactoryBean.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1157)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:922)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:82)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:62)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:150)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+2016-02-18 13:25:04.613 9540 WARN  impl.DisconfFileCoreProcessorImpl - cannot monitor resource/support.properties because watch mgr is null
+2016-02-18 13:25:04.615 9542 WARN  properties.ReloadablePropertiesFactoryBean - java.io.FileNotFoundException: class path resource [resource/jdbc.properties] cannot be resolved to URL because it does not exist
+2016-02-18 13:25:04.616 9543 WARN  properties.ReloadablePropertiesFactoryBean - java.io.FileNotFoundException: class path resource [resource/support.properties] cannot be resolved to URL because it does not exist
+2016-02-18 13:25:04.617 9544 INFO  properties.ReloadablePropertiesFactoryBean - Loading properties file from class path resource [resource/jdbc.properties]
+2016-02-18 13:25:04.620 9547 INFO  client.DisconfMgr - ******************************* DISCONF CLOSE *******************************
+2016-02-18 13:25:04.626 9553 ERROR main.Main - Error creating bean with name 'propertyConfigurer' defined in file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-disconf.xml]: Cannot resolve reference to bean 'configproperties_disconf' while setting bean property 'propertiesArray' with key [0]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configproperties_disconf' defined in file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-disconf.xml]: Invocation of init method failed; nested exception is java.io.FileNotFoundException: class path resource [resource/jdbc.properties] cannot be opened because it does not exist
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propertyConfigurer' defined in file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-disconf.xml]: Cannot resolve reference to bean 'configproperties_disconf' while setting bean property 'propertiesArray' with key [0]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configproperties_disconf' defined in file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-disconf.xml]: Invocation of init method failed; nested exception is java.io.FileNotFoundException: class path resource [resource/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:336)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:150)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configproperties_disconf' defined in file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-disconf.xml]: Invocation of init method failed; nested exception is java.io.FileNotFoundException: class path resource [resource/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	... 18 more
+Caused by: java.io.FileNotFoundException: class path resource [resource/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.core.io.support.EncodedResource.getInputStream(EncodedResource.java:143)
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:98)
+	at org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:175)
+	at org.springframework.core.io.support.PropertiesLoaderSupport.mergeProperties(PropertiesLoaderSupport.java:156)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.doReload(ReloadablePropertiesFactoryBean.java:228)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.reload(ReloadablePropertiesFactoryBean.java:218)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.createMyInstance(ReloadablePropertiesFactoryBean.java:169)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.createProperties(ReloadablePropertiesFactoryBean.java:148)
+	at org.springframework.beans.factory.config.PropertiesFactoryBean.afterPropertiesSet(PropertiesFactoryBean.java:71)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 25 more
+2016-02-18 13:25:35.941 114  INFO  support.FileSystemXmlApplicationContext - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@15695c8: startup date [Thu Feb 18 13:25:35 CST 2016]; root of context hierarchy
+2016-02-18 13:25:35.969 142  INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from file [G:\workspace\20150910_first\transfer-support\resource\applicationContext.xml]
+2016-02-18 13:25:36.043 216  INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-disconf.xml]
+2016-02-18 13:25:36.074 247  INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-provider.xml]
+2016-02-18 13:26:10.296 34469 ERROR common.Version -  [DUBBO] Duplicate class com/alibaba/dubbo/common/Version.class in 2 jar [file:/G:/workspace/20150910_first/transfer-common/lib/dubbo-2.5.4-SNAPSHOT.jar!/com/alibaba/dubbo/common/Version.class, file:/G:/workspace/20150910_first/transfer-support/lib/dubbo-2.5.4-SNAPSHOT.jar!/com/alibaba/dubbo/common/Version.class], dubbo version: 2.5.4-SNAPSHOT, current host: 127.0.0.1
+2016-02-18 13:26:10.297 34470 ERROR common.Version -  [DUBBO] Duplicate class com/alibaba/dubbo/config/spring/schema/DubboNamespaceHandler.class in 2 jar [file:/G:/workspace/20150910_first/transfer-common/lib/dubbo-2.5.4-SNAPSHOT.jar!/com/alibaba/dubbo/config/spring/schema/DubboNamespaceHandler.class, file:/G:/workspace/20150910_first/transfer-support/lib/dubbo-2.5.4-SNAPSHOT.jar!/com/alibaba/dubbo/config/spring/schema/DubboNamespaceHandler.class], dubbo version: 2.5.4-SNAPSHOT, current host: 127.0.0.1
+2016-02-18 13:26:10.468 34641 INFO  config.ConfigMgr - --------------- LOAD CONFIG START ---------------
+2016-02-18 13:26:10.537 34710 INFO  config.ConfigMgr - Finer print: jackson-PC_0_6960fe95-f320-4169-a965-109bc180bc6a
+2016-02-18 13:26:10.541 34714 INFO  utils.ClassLoaderUtil - classpath: /G:/workspace/20150910_first/transfer-support/bin/
+2016-02-18 13:26:10.546 34719 INFO  inner.DisInnerConfigHelper - SERVER disconf.conf_server_host: [119.9.109.54:8099]
+2016-02-18 13:26:10.546 34719 INFO  inner.DisInnerConfigHelper - SERVER disconf.version: 1.0.0
+2016-02-18 13:26:10.546 34719 INFO  inner.DisInnerConfigHelper - SERVER disconf.app: transfer-api-config
+2016-02-18 13:26:10.546 34719 INFO  inner.DisInnerConfigHelper - SERVER disconf.env: local
+2016-02-18 13:26:10.546 34719 INFO  inner.DisInnerConfigHelper - SERVER disconf.enable.remote.conf: true
+2016-02-18 13:26:10.546 34719 INFO  inner.DisInnerConfigHelper - SERVER disconf.debug: true
+2016-02-18 13:26:10.546 34719 INFO  inner.DisInnerConfigHelper - SERVER disconf.user_define_download_dir: resource/
+2016-02-18 13:26:10.546 34719 INFO  inner.DisInnerConfigHelper - SERVER ignore: []
+2016-02-18 13:26:10.546 34719 INFO  config.ConfigMgr - --------------- LOAD CONFIG END ---------------
+2016-02-18 13:26:10.546 34719 INFO  client.DisconfMgr - ******************************* DISCONF START FIRST SCAN *******************************
+2016-02-18 13:26:10.689 34862 INFO  reflections.Reflections - Reflections took 102 ms to scan 2 urls, producing 99 keys and 13364 values 
+2016-02-18 13:26:11.046 35219 INFO  http.HttpClientUtil - execute http request [null], status code [502]
+2016-02-18 13:26:11.047 35220 WARN  impl.RetryStrategyRoundBin - cannot reach, will retry 0 .... java.lang.Exception: execute  request failed [null], statusCode [502]
+2016-02-18 13:26:12.047 36220 WARN  impl.RetryStrategyRoundBin - finally failed....
+2016-02-18 13:26:13.049 37222 ERROR watch.WatchFactory - cannot get watch module
+java.lang.Exception: cannot get: RemoteUrl [url=/api/zoo/hosts, serverList=[119.9.109.54:8099], urls=[http://119.9.109.54:8099/api/zoo/hosts]]
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.getJsonData(RestfulMgrImpl.java:75)
+	at com.baidu.disconf.client.fetcher.impl.FetcherMgrImpl.getValueFromServer(FetcherMgrImpl.java:76)
+	at com.baidu.disconf.client.watch.WatchFactory.getWatchMgr(WatchFactory.java:43)
+	at com.baidu.disconf.client.core.DisconfCoreFactory.getDisconfCoreMgr(DisconfCoreFactory.java:32)
+	at com.baidu.disconf.client.DisconfMgr.firstScan(DisconfMgr.java:96)
+	at com.baidu.disconf.client.DisconfMgrBean.postProcessBeanDefinitionRegistry(DisconfMgrBean.java:75)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:254)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:94)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+2016-02-18 13:26:13.070 37243 INFO  client.DisconfMgr - ******************************* DISCONF END FIRST SCAN *******************************
+2016-02-18 13:26:13.164 37337 WARN  beans.GenericTypeAwarePropertyDescriptor - Invalid JavaBean property 'locations' being accessed! Ambiguous write methods found next to actually used [public void com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.setLocations(java.util.List)]: [public void org.springframework.core.io.support.PropertiesLoaderSupport.setLocations(org.springframework.core.io.Resource[])]
+2016-02-18 13:26:13.266 37439 WARN  impl.RetryStrategyRoundBin - cannot reach, will retry 0 .... java.io.IOException: Server returned HTTP response code: 502 for URL: http://119.9.109.54:8099/api/config/file?app=transfer-api-config&env=local&type=0&key=resource/jdbc.properties&version=1.0.0
+2016-02-18 13:26:14.267 38440 WARN  impl.RetryStrategyRoundBin - finally failed....
+2016-02-18 13:26:15.267 39440 WARN  impl.RestfulMgrImpl - download file failed, using previous download file.
+java.lang.Exception: download failed.
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.retry4ConfDownload(RestfulMgrImpl.java:246)
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.retryDownload(RestfulMgrImpl.java:180)
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.downloadFromServer(RestfulMgrImpl.java:106)
+	at com.baidu.disconf.client.fetcher.impl.FetcherMgrImpl.downloadFileFromServer(FetcherMgrImpl.java:100)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.updateOneConfFile(DisconfFileCoreProcessorImpl.java:105)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.processOneItem(DisconfFileCoreProcessorImpl.java:76)
+	at com.baidu.disconf.client.core.impl.DisconfCoreMgrImpl.processFile(DisconfCoreMgrImpl.java:82)
+	at com.baidu.disconf.client.DisconfMgr.reloadableScan(DisconfMgr.java:191)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.setLocations(ReloadablePropertiesFactoryBean.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1157)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:922)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:82)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:62)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:150)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+2016-02-18 13:26:15.268 39441 ERROR impl.DisconfFileCoreProcessorImpl - java.lang.NullPointerException
+java.lang.NullPointerException
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.downloadFromServer(RestfulMgrImpl.java:133)
+	at com.baidu.disconf.client.fetcher.impl.FetcherMgrImpl.downloadFileFromServer(FetcherMgrImpl.java:100)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.updateOneConfFile(DisconfFileCoreProcessorImpl.java:105)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.processOneItem(DisconfFileCoreProcessorImpl.java:76)
+	at com.baidu.disconf.client.core.impl.DisconfCoreMgrImpl.processFile(DisconfCoreMgrImpl.java:82)
+	at com.baidu.disconf.client.DisconfMgr.reloadableScan(DisconfMgr.java:191)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.setLocations(ReloadablePropertiesFactoryBean.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1157)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:922)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:82)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:62)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:150)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+2016-02-18 13:26:15.270 39443 WARN  impl.DisconfFileCoreProcessorImpl - using local properties in class path: resource/jdbc.properties
+2016-02-18 13:26:15.273 39446 ERROR impl.DisconfFileCoreProcessorImpl - cannot get kv data for resource/jdbc.properties
+java.lang.Exception: cannot load config file: /G:/workspace/20150910_first/transfer-support/bin/\resource/jdbc.properties
+	at com.baidu.disconf.client.utils.ConfigLoaderUtils.loadConfig(ConfigLoaderUtils.java:105)
+	at com.baidu.disconf.client.core.filetype.impl.DisconfPropertiesProcessorImpl.getKvMap(DisconfPropertiesProcessorImpl.java:23)
+	at com.baidu.disconf.client.core.filetype.FileTypeProcessorUtils.getKvMap(FileTypeProcessorUtils.java:47)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.updateOneConfFile(DisconfFileCoreProcessorImpl.java:123)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.processOneItem(DisconfFileCoreProcessorImpl.java:76)
+	at com.baidu.disconf.client.core.impl.DisconfCoreMgrImpl.processFile(DisconfCoreMgrImpl.java:82)
+	at com.baidu.disconf.client.DisconfMgr.reloadableScan(DisconfMgr.java:191)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.setLocations(ReloadablePropertiesFactoryBean.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1157)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:922)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:82)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:62)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:150)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+2016-02-18 13:26:15.288 39461 WARN  impl.DisconfFileCoreProcessorImpl - cannot monitor resource/jdbc.properties because watch mgr is null
+2016-02-18 13:26:15.396 39569 WARN  impl.RetryStrategyRoundBin - cannot reach, will retry 0 .... java.io.IOException: Server returned HTTP response code: 502 for URL: http://119.9.109.54:8099/api/config/file?app=transfer-api-config&env=local&type=0&key=resource/support.properties&version=1.0.0
+2016-02-18 13:26:16.397 40570 WARN  impl.RetryStrategyRoundBin - finally failed....
+2016-02-18 13:26:17.398 41571 WARN  impl.RestfulMgrImpl - download file failed, using previous download file.
+java.lang.Exception: download failed.
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.retry4ConfDownload(RestfulMgrImpl.java:246)
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.retryDownload(RestfulMgrImpl.java:180)
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.downloadFromServer(RestfulMgrImpl.java:106)
+	at com.baidu.disconf.client.fetcher.impl.FetcherMgrImpl.downloadFileFromServer(FetcherMgrImpl.java:100)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.updateOneConfFile(DisconfFileCoreProcessorImpl.java:105)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.processOneItem(DisconfFileCoreProcessorImpl.java:76)
+	at com.baidu.disconf.client.core.impl.DisconfCoreMgrImpl.processFile(DisconfCoreMgrImpl.java:82)
+	at com.baidu.disconf.client.DisconfMgr.reloadableScan(DisconfMgr.java:191)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.setLocations(ReloadablePropertiesFactoryBean.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1157)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:922)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:82)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:62)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:150)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+2016-02-18 13:26:17.400 41573 ERROR impl.DisconfFileCoreProcessorImpl - java.lang.NullPointerException
+java.lang.NullPointerException
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.downloadFromServer(RestfulMgrImpl.java:133)
+	at com.baidu.disconf.client.fetcher.impl.FetcherMgrImpl.downloadFileFromServer(FetcherMgrImpl.java:100)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.updateOneConfFile(DisconfFileCoreProcessorImpl.java:105)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.processOneItem(DisconfFileCoreProcessorImpl.java:76)
+	at com.baidu.disconf.client.core.impl.DisconfCoreMgrImpl.processFile(DisconfCoreMgrImpl.java:82)
+	at com.baidu.disconf.client.DisconfMgr.reloadableScan(DisconfMgr.java:191)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.setLocations(ReloadablePropertiesFactoryBean.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1157)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:922)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:82)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:62)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:150)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+2016-02-18 13:26:17.402 41575 WARN  impl.DisconfFileCoreProcessorImpl - using local properties in class path: resource/support.properties
+2016-02-18 13:26:17.404 41577 ERROR impl.DisconfFileCoreProcessorImpl - cannot get kv data for resource/support.properties
+java.lang.Exception: cannot load config file: /G:/workspace/20150910_first/transfer-support/bin/\resource/support.properties
+	at com.baidu.disconf.client.utils.ConfigLoaderUtils.loadConfig(ConfigLoaderUtils.java:105)
+	at com.baidu.disconf.client.core.filetype.impl.DisconfPropertiesProcessorImpl.getKvMap(DisconfPropertiesProcessorImpl.java:23)
+	at com.baidu.disconf.client.core.filetype.FileTypeProcessorUtils.getKvMap(FileTypeProcessorUtils.java:47)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.updateOneConfFile(DisconfFileCoreProcessorImpl.java:123)
+	at com.baidu.disconf.client.core.processor.impl.DisconfFileCoreProcessorImpl.processOneItem(DisconfFileCoreProcessorImpl.java:76)
+	at com.baidu.disconf.client.core.impl.DisconfCoreMgrImpl.processFile(DisconfCoreMgrImpl.java:82)
+	at com.baidu.disconf.client.DisconfMgr.reloadableScan(DisconfMgr.java:191)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.setLocations(ReloadablePropertiesFactoryBean.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:1157)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:922)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:82)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:62)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:150)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+2016-02-18 13:26:17.407 41580 WARN  impl.DisconfFileCoreProcessorImpl - cannot monitor resource/support.properties because watch mgr is null
+2016-02-18 13:26:17.409 41582 WARN  properties.ReloadablePropertiesFactoryBean - java.io.FileNotFoundException: class path resource [resource/jdbc.properties] cannot be resolved to URL because it does not exist
+2016-02-18 13:26:17.409 41582 WARN  properties.ReloadablePropertiesFactoryBean - java.io.FileNotFoundException: class path resource [resource/support.properties] cannot be resolved to URL because it does not exist
+2016-02-18 13:26:17.410 41583 INFO  properties.ReloadablePropertiesFactoryBean - Loading properties file from class path resource [resource/jdbc.properties]
+2016-02-18 13:26:17.413 41586 INFO  client.DisconfMgr - ******************************* DISCONF CLOSE *******************************
+2016-02-18 13:26:17.420 41593 ERROR main.Main - Error creating bean with name 'propertyConfigurer' defined in file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-disconf.xml]: Cannot resolve reference to bean 'configproperties_disconf' while setting bean property 'propertiesArray' with key [0]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configproperties_disconf' defined in file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-disconf.xml]: Invocation of init method failed; nested exception is java.io.FileNotFoundException: class path resource [resource/jdbc.properties] cannot be opened because it does not exist
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propertyConfigurer' defined in file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-disconf.xml]: Cannot resolve reference to bean 'configproperties_disconf' while setting bean property 'propertiesArray' with key [0]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configproperties_disconf' defined in file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-disconf.xml]: Invocation of init method failed; nested exception is java.io.FileNotFoundException: class path resource [resource/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:336)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:359)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:150)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configproperties_disconf' defined in file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-disconf.xml]: Invocation of init method failed; nested exception is java.io.FileNotFoundException: class path resource [resource/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	... 18 more
+Caused by: java.io.FileNotFoundException: class path resource [resource/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.core.io.support.EncodedResource.getInputStream(EncodedResource.java:143)
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:98)
+	at org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:175)
+	at org.springframework.core.io.support.PropertiesLoaderSupport.mergeProperties(PropertiesLoaderSupport.java:156)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.doReload(ReloadablePropertiesFactoryBean.java:228)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.reload(ReloadablePropertiesFactoryBean.java:218)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.createMyInstance(ReloadablePropertiesFactoryBean.java:169)
+	at com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.createProperties(ReloadablePropertiesFactoryBean.java:148)
+	at org.springframework.beans.factory.config.PropertiesFactoryBean.afterPropertiesSet(PropertiesFactoryBean.java:71)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 25 more
+2016-02-18 17:08:34.004 157  INFO  support.FileSystemXmlApplicationContext - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@15695c8: startup date [Thu Feb 18 17:08:34 CST 2016]; root of context hierarchy
+2016-02-18 17:08:34.031 184  INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from file [G:\workspace\20150910_first\transfer-support\resource\applicationContext.xml]
+2016-02-18 17:08:34.108 261  INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-disconf.xml]
+2016-02-18 17:08:34.139 292  INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from file [G:\workspace\20150910_first\transfer-support\resource\applicationContext-provider.xml]
+2016-02-18 17:08:35.263 1416 ERROR common.Version -  [DUBBO] Duplicate class com/alibaba/dubbo/common/Version.class in 2 jar [file:/G:/workspace/20150910_first/transfer-common/lib/dubbo-2.5.4-SNAPSHOT.jar!/com/alibaba/dubbo/common/Version.class, file:/G:/workspace/20150910_first/transfer-support/lib/dubbo-2.5.4-SNAPSHOT.jar!/com/alibaba/dubbo/common/Version.class], dubbo version: 2.5.4-SNAPSHOT, current host: 127.0.0.1
+2016-02-18 17:08:35.263 1416 ERROR common.Version -  [DUBBO] Duplicate class com/alibaba/dubbo/config/spring/schema/DubboNamespaceHandler.class in 2 jar [file:/G:/workspace/20150910_first/transfer-common/lib/dubbo-2.5.4-SNAPSHOT.jar!/com/alibaba/dubbo/config/spring/schema/DubboNamespaceHandler.class, file:/G:/workspace/20150910_first/transfer-support/lib/dubbo-2.5.4-SNAPSHOT.jar!/com/alibaba/dubbo/config/spring/schema/DubboNamespaceHandler.class], dubbo version: 2.5.4-SNAPSHOT, current host: 127.0.0.1
+2016-02-18 17:08:35.455 1608 INFO  config.ConfigMgr - --------------- LOAD CONFIG START ---------------
+2016-02-18 17:08:35.515 1668 INFO  config.ConfigMgr - Finer print: jackson-PC_0_7223b6ab-f997-41b7-aa88-81c146551340
+2016-02-18 17:08:35.519 1672 INFO  utils.ClassLoaderUtil - classpath: /G:/workspace/20150910_first/transfer-support/bin/
+2016-02-18 17:08:35.524 1677 INFO  inner.DisInnerConfigHelper - SERVER disconf.conf_server_host: [119.9.109.54:8099]
+2016-02-18 17:08:35.524 1677 INFO  inner.DisInnerConfigHelper - SERVER disconf.version: 1.0.0
+2016-02-18 17:08:35.524 1677 INFO  inner.DisInnerConfigHelper - SERVER disconf.app: transfer-api-config
+2016-02-18 17:08:35.524 1677 INFO  inner.DisInnerConfigHelper - SERVER disconf.env: local
+2016-02-18 17:08:35.524 1677 INFO  inner.DisInnerConfigHelper - SERVER disconf.enable.remote.conf: true
+2016-02-18 17:08:35.525 1678 INFO  inner.DisInnerConfigHelper - SERVER disconf.debug: true
+2016-02-18 17:08:35.525 1678 INFO  inner.DisInnerConfigHelper - SERVER disconf.user_define_download_dir: resource/
+2016-02-18 17:08:35.525 1678 INFO  inner.DisInnerConfigHelper - SERVER ignore: []
+2016-02-18 17:08:35.525 1678 INFO  config.ConfigMgr - --------------- LOAD CONFIG END ---------------
+2016-02-18 17:08:35.525 1678 INFO  client.DisconfMgr - ******************************* DISCONF START FIRST SCAN *******************************
+2016-02-18 17:08:35.678 1831 INFO  reflections.Reflections - Reflections took 112 ms to scan 2 urls, producing 99 keys and 13364 values 
+2016-02-18 17:08:40.862 7015 WARN  impl.RetryStrategyRoundBin - cannot reach, will retry 0 .... org.apache.http.conn.ConnectTimeoutException: Connect to 119.9.109.54:8099 [/119.9.109.54] failed: connect timed out
+2016-02-18 17:08:41.862 8015 WARN  impl.RetryStrategyRoundBin - finally failed....
+2016-02-18 17:08:42.864 9017 ERROR watch.WatchFactory - cannot get watch module
+java.lang.Exception: cannot get: RemoteUrl [url=/api/zoo/hosts, serverList=[119.9.109.54:8099], urls=[http://119.9.109.54:8099/api/zoo/hosts]]
+	at com.baidu.disconf.core.common.restful.impl.RestfulMgrImpl.getJsonData(RestfulMgrImpl.java:75)
+	at com.baidu.disconf.client.fetcher.impl.FetcherMgrImpl.getValueFromServer(FetcherMgrImpl.java:76)
+	at com.baidu.disconf.client.watch.WatchFactory.getWatchMgr(WatchFactory.java:43)
+	at com.baidu.disconf.client.core.DisconfCoreFactory.getDisconfCoreMgr(DisconfCoreFactory.java:32)
+	at com.baidu.disconf.client.DisconfMgr.firstScan(DisconfMgr.java:96)
+	at com.baidu.disconf.client.DisconfMgrBean.postProcessBeanDefinitionRegistry(DisconfMgrBean.java:75)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:254)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:94)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:609)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:140)
+	at org.springframework.context.support.FileSystemXmlApplicationContext.<init>(FileSystemXmlApplicationContext.java:84)
+	at com.ds.transfer.record.main.Main.loadSomething(Main.java:86)
+	at com.ds.transfer.record.main.Main.main(Main.java:65)
+2016-02-18 17:08:42.886 9039 INFO  client.DisconfMgr - ******************************* DISCONF END FIRST SCAN *******************************
+2016-02-18 17:08:43.037 9190 WARN  beans.GenericTypeAwarePropertyDescriptor - Invalid JavaBean property 'locations' being accessed! Ambiguous write methods found next to actually used [public void com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean.setLocations(java.util.List)]: [public void org.springframework.core.io.support.PropertiesLoaderSupport.setLocations(org.springframework.core.io.Resource[])]

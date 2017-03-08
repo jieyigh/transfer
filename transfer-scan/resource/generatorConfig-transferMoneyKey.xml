@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry location="G:\jar\jb_jar\mysql-connector-java-5.1.30.jar"/>
+	<context id="context1">
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/transfer?useUnicode=true&amp;characterEncoding=UTF-8"
+			userId="root" password="root" />
+
+		<javaModelGenerator targetPackage="com.ds.transfer.scan.entity"
+			targetProject="transfer-scan">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- mapper的class位置 -->
+		<sqlMapGenerator targetPackage="com.ds.transfer.scan.mapper"
+			targetProject="transfer-scan">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- mapper的xml位置 -->
+		<javaClientGenerator targetPackage="com.ds.transfer.scan.mapper"
+			targetProject="transfer-scan" type="XMLMAPPER" />
+
+		<table domainObjectName="TransferMoneyKeyEntity" tableName="transfer_money_key">
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+			<columnOverride column="id" javaType="java.lang.Integer"></columnOverride>
+		</table>
+	</context>
+</generatorConfiguration>
